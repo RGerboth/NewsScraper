@@ -17,7 +17,11 @@ var ArticleSchema = new Schema({
     unique: true,
     required: true
   },
-  // `link` is required and of type String
+
+  byline: {
+    type: String,
+  },
+
   summary: {
     type: String,
   },

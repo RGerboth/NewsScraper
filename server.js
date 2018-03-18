@@ -50,12 +50,16 @@ app.get("/scrape", function(req, res) {
       result.link = $(element)
           .children("a")
           .attr("href");
+      result.byline = $(element)
+          .siblings("p.byline")
+          .text();
       result.summary = $(element)
           .siblings("p.summary")
           .text();
           
       console.log(`Title: ${result.title}`)
       console.log(`link: ${result.link}`)
+      console.log(`Byline: ${result.byline}`)
       console.log(`Summary: ${result.summary}`)
 
       // Create a new Article using the `result` object built from scraping
